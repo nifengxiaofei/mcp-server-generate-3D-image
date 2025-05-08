@@ -1,0 +1,31 @@
+{
+  "name": "mcp-server-3Dpicture",
+  "version": "0.1.0",
+  "description": "change a picture to 3D",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "mcp-server-3Dpicture": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.5.10",
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "dotenv": "^16.5.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/node-fetch": "^2.6.12",
+    "rxjs": "^7.8.2",
+    "typescript": "^5.3.3"
+  }
+}
